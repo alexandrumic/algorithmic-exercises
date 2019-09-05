@@ -53,7 +53,6 @@ function validString(s) {
 function alternate(s) {
   let unique = [];
   let newString = '';
-  let response = 0;
   let validStrings = [];
 
   // edge case
