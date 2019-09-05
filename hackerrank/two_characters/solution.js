@@ -38,6 +38,7 @@ function replaceAll(str, char) {
   const re = new RegExp('[^' + char + ']', 'g');
   return str.replace(re, '');
 }
+
 function validString(s) {
   for (let i = 0; i < s.length - 1; i++) {
     if (s[i] === s[i + 1]) {
