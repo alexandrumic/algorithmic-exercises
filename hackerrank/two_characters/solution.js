@@ -61,18 +61,22 @@ function alternate(s) {
     return 0;
   }
 
+  // first, create an array with unique values
   for (let i = 0; i < s.length; i++) {
     if (!unique.includes(s[i])) {
       unique.push(s[i]);
     }
   }
 
+  // create an array with all possible pairs
   const pairs = getPairs(unique);
 
+  // go through every pair and get the final result
   for (let i = 0; i < pairs.length; i++) {
     const pair = pairs[i];
-    newString = replaceAll(s, `${pair[0]}${pair[1]}`)
+    newString = replaceAll(s, `${pair[0]}${pair[1]}`); // remove all other characters that are different from the ones in the pair
 
+    // create an array with the length of the valid strings
     if (validString(newString)) {
       validStrings.push(newString.length);
     }
@@ -82,6 +86,7 @@ function alternate(s) {
     return 0
   }
 
+  // return the maximum length from the array
   return Math.max.apply(Math, validStrings);
 }
 
